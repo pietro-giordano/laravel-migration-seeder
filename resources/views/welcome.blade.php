@@ -4,30 +4,44 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel 9 + Bootstrap Template</title>
+        <title>Laravel Migration Seeder</title>
 
         {{-- Includiamo gli assets con la direttiva @vite --}}
         @vite('resources/js/app.js')
     </head>
     <body>
 
-        <main>
-            <div class="container">
-                <div class="row">
-                    <div class="col text-center">
+            <main>
+                  <div class="container">
+                        <div class="row">
 
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="{{ Vite::asset('resources/img/laravel.png') }}" alt="">
+                              @foreach ($trains as $train)
+                                    <div class="col-3 text-center">
+                                          <div class="card mt-3 mb-3 bg-info">
+                                                <div class="card-body">
+                                                      <div class="card-header fw-bold bg-primary">
+                                                            {{ $train['codice_treno'] }}
+                                                      </div>
+                                                      <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">{{ $train['azienda'] }}</li>
+                                                            <li class="list-group-item">Partenza da: {{ $train['stazione_partenza'] }}</li>
+                                                            <li class="list-group-item">Arrivo a: {{ $train['stazione_arrivo'] }}</li>
+                                                            <li class="list-group-item">Dal: {{ $train['data_partenza'] }}</li>
+                                                            <li class="list-group-item">Al: {{ $train['data_arrivo'] }}</li>
+                                                            <li class="list-group-item">Da ora: {{ $train['orario_partenza'] }}</li>
+                                                            <li class="list-group-item">A ora: {{ $train['orario_arrivo'] }}</li>
+                                                            <li class="list-group-item">N. carrozze: {{ $train['numero_carrozze'] }}</li>
+                                                            <li class="list-group-item">{{ $train['in_orario'] }}</li>
+                                                            <li class="list-group-item">{{ $train['cancellato'] }}</li>
+                                                      </ul>
+                                                </div>
+                                          </div>                                          
+                                    </div>
+                              @endforeach
 
-                                <h1 class="card-title">Laravel 9 + Bootstrap Template</h1>
-                            </div>
                         </div>
-
-                    </div>
-                </div>
-            </div>
-        </main>
+                  </div>
+            </main>
 
     </body>
 </html>
