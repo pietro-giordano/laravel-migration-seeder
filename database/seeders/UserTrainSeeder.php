@@ -20,8 +20,8 @@ class UserTrainSeeder extends Seeder
             for ($i = 0; $i < 30; $i++) {
                   $newTrain = new Train();
                   $newTrain->azienda = $faker->name();
-                  $newTrain->data_partenza = $faker->date('Y-m-d');
-                  $newTrain->data_arrivo = $faker->date('Y-m-d');
+                  $newTrain->data_partenza = $faker->dateTimeBetween('-1 week', '+1 week');
+                  $newTrain->data_arrivo = $faker->dateTimeBetween('-1 week', '+1 week');
                   $newTrain->stazione_partenza = $faker->name();
                   $newTrain->stazione_arrivo = $faker->name();
                   $newTrain->orario_partenza = $faker->time();
