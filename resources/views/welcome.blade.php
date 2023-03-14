@@ -26,11 +26,9 @@
                                                             <li class="list-group-item">{{ $train['azienda'] }}</li>
                                                             <li class="list-group-item">Partenza da: {{ $train['stazione_partenza'] }}</li>
                                                             <li class="list-group-item">Arrivo a: {{ $train['stazione_arrivo'] }}</li>
-                                                            <li class="list-group-item">Dal: {{ $train['data_partenza'] }}</li>
-                                                            <li class="list-group-item">Al: {{ $train['data_arrivo'] }}</li>
                                                             <li class="list-group-item">Da ora: {{ $train['orario_partenza'] }}</li>
                                                             <li class="list-group-item">A ora: {{ $train['orario_arrivo'] }}</li>
-                                                            <li class="list-group-item">N. carrozze: {{ $train['numero_carrozze'] }}</li>
+                                                            <li class="list-group-item">N. carrozze: {{ $train['n_carrozze'] }}</li>
                                                             <li class="list-group-item">{{ $train['in_orario'] }}</li>
                                                             <li class="list-group-item">{{ $train['cancellato'] }}</li>
                                                       </ul>
